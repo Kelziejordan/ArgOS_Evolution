@@ -1,0 +1,140 @@
+niche: "Financial Security"
+domain_id: "finance"
+core_outcome: "Financial security and defensive liquidity buffers."
+
+stages:
+  - id: 1
+    name: "Fragile Base"
+    description: "Zero liquid safety net. Vulnerable to structural emergencies."
+    criteria:
+      - "emergency_fund_months < 1.0"
+      - "has_high_interest_debt == true"
+    next_stage_description: "Some stability, starter emergency buffer, credit drain contained."
+
+  - id: 2
+    name: "Stable Base"
+    description: "Consistent 1-3 month buffer. Core debt loops isolated."
+    criteria:
+      - "1.0 <= emergency_fund_months < 3.0"
+      - "has_high_interest_debt == false"
+    next_stage_description: "Stable cash metrics, growing liquid buffer, safe compounding framework."
+
+  - id: 3
+    name: "Compounding Base"
+    description: "4-6 month capital reserve. Consistent yield expansion into productive assets."
+    criteria:
+      - "3.0 <= emergency_fund_months <= 6.0"
+      - "saves_regularly == true or invests == true"
+    next_stage_description: "Passive yields cover essentials, multiple parallel active client streams."
+
+  - id: 4
+    name: "Sovereign Base"
+    description: "Passive asset distributions exceed baseline metabolic cost outlays."
+    criteria:
+      - "emergency_fund_months >= 6.0"
+      - "invests == true"
+      - "has_side_income == true"
+    next_stage_description: null
+
+custom_fields:
+  - name: "income_stability"
+    type: "enum"
+    values: ["stable", "somewhat unstable", "very unstable"]
+  - name: "monthly_income_after_tax"
+    type: "number"
+  - name: "has_emergency_fund"
+    type: "boolean"
+  - name: "emergency_fund_months"
+    type: "number"
+  - name: "has_high_interest_debt"
+    type: "boolean"
+  - name: "high_interest_debt_approx_total"
+    type: "number"
+  - name: "saves_regularly"
+    type: "boolean"
+  - name: "invests"
+    type: "boolean"
+  - name: "lives_paycheck_to_paycheck"
+    type: "boolean"
+  - name: "monthly_expenses_approx"
+    type: "number"
+  - name: "has_side_income"
+    type: "boolean"
+  - name: "side_income_monthly_approx"
+    type: "number"
+
+onboarding_questions:
+  - id: "income_stability"
+    question: "How predictable is your primary incoming yield stream?"
+    field: "income_stability"
+    type: "enum"
+    options: ["stable", "somewhat unstable", "very unstable"]
+  - id: "emergency_fund_months"
+    question: "Do you have an emergency fund? If yes, how many months of expenses could it cover?"
+    field: "emergency_fund_months"
+    type: "number"
+  - id: "has_high_interest_debt"
+    question: "Do you have high-interest debt (revolving credit card, payday)? If yes, roughly how much?"
+    field: "has_high_interest_debt"
+    type: "boolean"
+  - id: "saves_regularly"
+    question: "Do you currently save anything regularly each month?"
+    field: "saves_regularly"
+    type: "boolean"
+
+plans:
+  stage_1_90_day:
+    month_1:
+      - task: "Conduct complete metabolic spend audit."
+        time_estimate: "15 minutes/day"
+        complexity: "Easy"
+        why: "Precision measurement prevents downstream drift."
+        expandable_content: "guide_daily_tracking"
+        courtesy_tip: "partner_budgeting_tool"
+      - task: "Deploy distinct high-yield buffer vault."
+        time_estimate: "1 hour"
+        complexity: "Easy"
+        why: "Intermingled funds get spent. Segregation forces cushion stability."
+        expandable_content: "guide_segregated_vault"
+      - task: "Enact high-interest debt confinement protocol."
+        time_estimate: "3 hours"
+        complexity: "Medium"
+        why: "Compounding Revolving debt at 20%+ is a critical vascular system error."
+        expandable_content: "guide_debt_confinement"
+    month_2:
+      - task: "Initiate micro-savers auto transfer protocol."
+        time_estimate: "20 minutes"
+        complexity: "Easy"
+        why: "Automating savings overrides cognitive fatigue."
+        expandable_content: "guide_auto_savings"
+        courtesy_tip: "partner_hisa_bank"
+      - task: "Identify technical skill specialization wedge."
+        time_estimate: "3 hours"
+        complexity: "Medium"
+        why: "Savings has a mathematical floor; production output scales without limits."
+        expandable_content: "guide_skill_wedge"
+    month_3:
+      - task: "Achieve $1,000 liquid buffer checkpoint."
+        time_estimate: "ongoing"
+        complexity: "Medium"
+        why: "Protects consumer credit indicators from emergency surprises."
+        expandable_content: "guide_emergency_foundations"
+      - task: "Conduct Stage 2 readiness diagnostics audit."
+        time_estimate: "30 minutes"
+        complexity: "Easy"
+        why: "Re-evaluate baseline parameters for next system tier placement."
+        expandable_content: "guide_reassessment"
+
+pathways:
+  - name: "Buffer Acceleration"
+    summary: "Solidify emergency cash into high-yield instruments to immediately absorb life's shockwaves."
+    levels:
+      - name: "Level 1: The Starter Wedge"
+        description: "Amass a strict $1,000 cash wedge to prevent returning to credit card reliance."
+      - name: "Level 2: The Halfway Shield"
+        description: "Grow the starter cash to cover 3 full months of bare metabolic survival costs."
+  - name: "Leveraged Expansion"
+    summary: "Amplify your core earning potential by decoupling professional yields from strict hourly restraints."
+    levels:
+      - name: "Level 1: High-Income Skill Acquisition"
+        description: "Dedicate 5 hours a week to master a digital skill with asymmetric market demand."

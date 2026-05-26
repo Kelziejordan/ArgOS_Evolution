@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "trade": {
+      "title": "Trade Execution",
+      "description": "A record of an executed trade on the hyperbot platform.",
+      "type": "object",
+      "properties": {
+        "symbol": { "type": "string", "description": "Trading pair, e.g., BTC/USD" },
+        "type": { "type": "string", "enum": ["LONG", "SHORT"], "description": "Position direction" },
+        "price": { "type": "number", "description": "Execution price" },
+        "quantity": { "type": "number", "description": "Size of the position" },
+        "status": { "type": "string", "enum": ["OPEN", "CLOSED", "LIQUIDATED"], "description": "Current status" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Execution time" },
+        "pnl": { "type": "number", "description": "Profit and loss" },
+        "userId": { "type": "string", "description": "Owner of the trade" }
+      },
+      "required": ["symbol", "type", "price", "quantity", "status", "timestamp", "userId"]
+    },
+    "signal": {
+      "title": "Neural Signal",
+      "description": "AI-generated trading signals based on sentiment and liquidity analysis.",
+      "type": "object",
+      "properties": {
+        "symbol": { "type": "string" },
+        "confidence": { "type": "number" },
+        "action": { "type": "string", "enum": ["BUY", "SELL", "HOLD"] },
+        "reasoning": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["symbol", "confidence", "action", "reasoning", "timestamp"]
+    },
+    "calibration": {
+      "title": "Life OS Calibration State",
+      "description": "Sovereign metrics, onboarding selections, and checklist state for active niches.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The subscriber's unique ID." },
+        "onboardingCompletes": { "type": "object", "description": "Status of onboarding per niche." },
+        "onboardingAnswers": { "type": "object", "description": "All submitted diagnostics questionnaire options." },
+        "nicheStages": { "type": "object", "description": "Calibrated stages for active niche modules." },
+        "taskCompletes": { "type": "object", "description": "Progress checklists mapping task identifiers to state." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Time of modification." }
+      },
+      "required": ["userId", "onboardingCompletes", "onboardingAnswers", "nicheStages", "taskCompletes", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "trades/{tradeId}": {
+      "schema": "trade",
+      "description": "Collection of all trades executed by users."
+    },
+    "signals": {
+      "schema": "signal",
+      "description": "Global feed of AI trading signals."
+    },
+    "calibrations/{userId}": {
+      "schema": "calibration",
+      "description": "Sovereign stage calibration databases for tracking 90-day progress."
+    }
+  }
+}

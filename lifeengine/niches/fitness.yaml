@@ -1,0 +1,122 @@
+niche: "Fitness & Health"
+domain_id: "fitness"
+core_outcome: "Consistent fitness, good health, and sustainable biological habits."
+
+stages:
+  - id: 1
+    name: "Fragile Beginner"
+    description: "No exercise routine, inconsistent eating, lack of recovery controls."
+    criteria:
+      - "days_exercising_per_week < 2"
+      - "has_system == false"
+    next_stage_description: "Stable physical consistency, sleep baseline anchored, simple nutrition goals."
+
+  - id: 2
+    name: "Consistent Base"
+    description: "Some exercise, initial physical habits stabilized. Bedtime routines initialized."
+    criteria:
+      - "2 <= days_exercising_per_week < 4"
+      - "consistency == 'somewhat inconsistent'"
+    next_stage_description: "Structured workout programs, protein targets met, high daily vigor."
+
+  - id: 3
+    name: "Solid Compounder"
+    description: "Optimized routine. Strength, cardiovascular capacity, and nutrition are compounding."
+    criteria:
+      - "4 <= days_exercising_per_week <= 6"
+      - "consistency == 'consistent'"
+      - "has_system == true"
+    next_stage_description: "Peak metabolic parameters, custom recovery metrics, total physical sovereignty."
+
+  - id: 4
+    name: "Sovereign vigor"
+    description: "Peak biological state. Absolute physical capacity, high heart-rate variability, zero pain."
+    criteria:
+      - "days_exercising_per_week >= 4"
+      - "consistency == 'consistent'"
+      - "has_system == true"
+      - "results_are_good == true"
+    next_stage_description: null
+
+custom_fields:
+  - name: "experience_level"
+    type: "enum"
+    values: ["none", "beginner", "intermediate", "advanced"]
+  - name: "consistency"
+    type: "enum"
+    values: ["very inconsistent", "somewhat inconsistent", "consistent"]
+  - name: "has_system"
+    type: "boolean"
+  - name: "days_exercising_per_week"
+    type: "number"
+  - name: "sleep_hours_avg"
+    type: "number"
+  - name: "primary_goal"
+    type: "enum"
+    values:
+      - "start_exercising_regularly"
+      - "lose_weight"
+      - "build_muscle"
+      - "improve_health_markers"
+      - "optimize_performance"
+
+onboarding_questions:
+  - id: "experience_level"
+    question: "How would you describe your current exercise experience?"
+    field: "experience_level"
+    type: "enum"
+    options: ["none", "beginner", "intermediate", "advanced"]
+  - id: "days_exercising_per_week"
+    question: "On average, how many days per week do you exercise?"
+    field: "days_exercising_per_week"
+    type: "number"
+  - id: "sleep_hours_avg"
+    question: "On average, how many hours of sleep do you get per night?"
+    field: "sleep_hours_avg"
+    type: "number"
+
+plans:
+  stage_1_90_day:
+    month_1:
+      - task: "Enact absolute sleep environment lockdown protocol."
+        time_estimate: "1 hour"
+        complexity: "easy"
+        why: "All biological repair, neural cleanup, and hormonal balance happen in deep sleep."
+        expandable_content: "guide_sleep_hygiene"
+      - task: "Execute three 20-minute daily movement/mobility checks weekly."
+        time_estimate: "1 hour/week"
+        complexity: "easy"
+        why: "Unlocks synovial fluid in hip and shoulder joints to reduce structural stiffness."
+        expandable_content: "guide_mobility_check"
+    month_2:
+      - task: "Establish 3 days/week of deliberate compound movement (walking, bodyweight squats)."
+        time_estimate: "30 minutes/session"
+        complexity: "easy"
+        why: "Build neural consistency and movement groove before scaling intensity."
+        expandable_content: "guide_starting_exercise"
+      - task: "Implement basic calculated protein checking targets."
+        time_estimate: "10 minutes"
+        complexity: "easy"
+        why: "Adequate dietary protein maintains anti-fragile muscle mass while in recovery."
+        expandable_content: "guide_protein_efficiency"
+        courtesy_tip: "partner_macro_tracker"
+    month_3:
+      - task: "Track workouts index in a static spreadsheet format."
+        time_estimate: "10 minutes/week"
+        complexity: "easy"
+        why: "Objective records identify strength improvements and progressive overload trends."
+        expandable_content: "guide_progressive_overload"
+
+pathways:
+  - name: "Resistance Architecture"
+    summary: "Build lean dense contractile tissue to turn your skeletal framework into an anti-fragile fortress."
+    levels:
+      - name: "Level 1: Compound Foundations"
+        description: "Master clean biological movement: squats, hinges, pushes, and pulls using bodyweight."
+      - name: "Level 2: Progressive Overload Hook"
+        description: "Introduce structured loads (barbells/dumbbells) three times a week."
+  - name: "Metabolic Conditioning"
+    summary: "Optimize mitochondrial density and cardiorespiratory health to bulletproof your cardiovascular system."
+    levels:
+      - name: "Level 1: Hourly Motion Anchor"
+        description: "Amass a strict baseline of 8,000 steps daily. Zero excuses."

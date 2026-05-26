@@ -1,0 +1,121 @@
+niche: "Career & Skill Growth"
+domain_id: "career"
+core_outcome: "High-income skill proficiency, career scale, and vocational independence."
+
+stages:
+  - id: 1
+    name: "Commuter / Fragile"
+    description: "No distinctive specialized skill. High vulnerability to market layoffs, low professional leverage."
+    criteria:
+      - "experience_level == 'none' or experience_level == 'beginner'"
+      - "has_system == false"
+    next_stage_description: "Acquire specialized software, scripting, or strategic skills and carve out a niche wedge."
+
+  - id: 2
+    name: "Specialist Core"
+    description: "Specialized skill acquired. Capable of executing clear tasks independently with decent quality."
+    criteria:
+      - "experience_level == 'beginner' or experience_level == 'intermediate'"
+      - "consistency == 'somewhat inconsistent'"
+    next_stage_description: "Learn to bundle services into complete high-ticket value, decoupling pay from hours."
+
+  - id: 3
+    name: "High Leverage"
+    description: "Highly leverageable consultant or operator. Pricing is based on project output or metrics, not raw hours."
+    criteria:
+      - "experience_level == 'intermediate' or experience_level == 'advanced'"
+      - "consistency == 'consistent'"
+      - "has_system == true"
+    next_stage_description: "Transition specialist systems into modular products or enterprise frameworks."
+
+  - id: 4
+    name: "Sovereign Operator"
+    description: "Complete professional autonomy. Running an independent agency, sass infrastructure, or high-equity operation."
+    criteria:
+      - "experience_level == 'advanced'"
+      - "consistency == 'consistent'"
+      - "has_system == true"
+      - "has_side_income == true"
+    next_stage_description: null
+
+custom_fields:
+  - name: "experience_level"
+    type: "enum"
+    values: ["none", "beginner", "intermediate", "advanced"]
+  - name: "consistency"
+    type: "enum"
+    values: ["very inconsistent", "somewhat inconsistent", "consistent"]
+  - name: "has_system"
+    type: "boolean"
+  - name: "job_satisfaction"
+    type: "enum"
+    values: ["very low", "low", "medium", "high", "very high"]
+  - name: "has_side_income"
+    type: "boolean"
+
+onboarding_questions:
+  - id: "experience_level"
+    question: "How would you describe your current experience level in your field?"
+    field: "experience_level"
+    type: "enum"
+    options: ["none", "beginner", "intermediate", "advanced"]
+  - id: "has_system"
+    question: "Do you have a clear system or plan for career/skill development?"
+    field: "has_system"
+    type: "boolean"
+  - id: "job_satisfaction"
+    question: "How satisfied are you with your current career progress?"
+    field: "job_satisfaction"
+    type: "enum"
+    options: ["very low", "low", "medium", "high", "very high"]
+
+plans:
+  stage_1_90_day:
+    month_1:
+      - task: "Conduct complete corporate output audit check."
+        time_estimate: "3 hours"
+        complexity: "Medium"
+        why: "You must identify exactly which of your efforts create the highest margin for your company."
+        expandable_content: "guide_corporate_audit"
+      - task: "Execute a public portfolio digital hygiene upgrade."
+        time_estimate: "2 hours"
+        complexity: "Easy"
+        why: "Cluttered profiles flag generalist levels instead of specialized operator states."
+        expandable_content: "guide_digital_hygiene"
+    month_2:
+      - task: "Build a single specialized mockup/template sandbox."
+        time_estimate: "8 hours"
+        complexity: "Hard"
+        why: "A working prototype demonstrating custom solutions is worth 1,000 resume pages."
+        expandable_content: "guide_prototype_build"
+        courtesy_tip: "partner_bootstrap_templates"
+      - task: "Draft a metric-backed case study describing the prototype."
+        time_estimate: "3 hours"
+        complexity: "Medium"
+        why: "Enterprise buyers pay for structural peace of mind and increased performance metrics."
+        expandable_content: "guide_case_study"
+    month_3:
+      - task: "Deploy highly customized value outreach templates."
+        time_estimate: "6 hours"
+        complexity: "Hard"
+        why: "First referrals and inline consulting opportunities require proactive target validation."
+        expandable_content: "guide_high_value_outreach"
+      - task: "Configure secure professional client retainer templates."
+        time_estimate: "2 hours"
+        complexity: "Easy"
+        why: "Secure transactional retainers turn simple sporadic gigs into predictable income streams."
+        expandable_content: "guide_retainer_setup"
+
+pathways:
+  - name: "Specialized Skill Mastery"
+    summary: "Identify high-margin specialized domains and stack your talent layers for maximum unique advantage."
+    levels:
+      - name: "Level 1: The Scarcity Map"
+        description: "Find a tech or strategy wedge at the intersection of two distinct, growing domains."
+      - name: "Level 2: The Core Portfolio Project"
+        description: "Build a single, highly polished end-to-end open-source system of exceptional quality."
+  - name: "Inbound Pipeline Setup"
+    summary: "Configure automated systems that position your authority in front of high-budget buyers, turning outreach into inbounds."
+    levels:
+      - name: "Level 1: The Specialized Landing"
+        description: "Build a single minimal landing page solving one core problem for one type of buyer."

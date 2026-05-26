@@ -1,0 +1,11 @@
+{
+  "name": "Remix: Argos-Evolved Cycle 2",
+  "description": "ArgOS has evolved from a mere trading bot to now something entirely different.... It\u0027s own ecosystem.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
